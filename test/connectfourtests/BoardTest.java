@@ -1,4 +1,4 @@
-package connectfourtests;
+package connect4_tests;
 
 
 import static org.junit.Assert.assertTrue;
