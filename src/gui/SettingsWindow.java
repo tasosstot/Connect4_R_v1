@@ -78,7 +78,7 @@ public class SettingsWindow extends JFrame {
 		add(player1ColorLabel);
 		add(player2ColorLabel);
 		
-		gui_style_drop_down = new JComboBox<String>();
+		gui_style_drop_down = new JComboBox<>();
 		gui_style_drop_down.addItem("System style");
 		gui_style_drop_down.addItem("Cross-platform style");
 		gui_style_drop_down.addItem("Nimbus style");
@@ -90,7 +90,7 @@ public class SettingsWindow extends JFrame {
 		else if (selectedGuiStyle == GuiStyle.NIMBUS_STYLE)
 			gui_style_drop_down.setSelectedIndex(2);
 		
-		game_mode_drop_down = new JComboBox<String>();
+		game_mode_drop_down = new JComboBox<>();
 		game_mode_drop_down.addItem("Human Vs Minimax AI");
 		game_mode_drop_down.addItem("Human Vs Human");
 		game_mode_drop_down.addItem("Minimax AI Vs Minimax AI");
@@ -123,7 +123,7 @@ public class SettingsWindow extends JFrame {
 		max_depth1_drop_down.setSelectedIndex(maxDepth1);
 		max_depth2_drop_down.setSelectedIndex(maxDepth2);
 		
-		player1_color_drop_down = new JComboBox<String>();
+		player1_color_drop_down = new JComboBox<>();
 		player1_color_drop_down.addItem("Red");
 		player1_color_drop_down.addItem("Yellow");
 		player1_color_drop_down.addItem("Black");
@@ -144,7 +144,7 @@ public class SettingsWindow extends JFrame {
 		else if (selectedPlayer1Color == Color.PURPLE)
 			player1_color_drop_down.setSelectedIndex(5);
 		
-		player2_color_drop_down = new JComboBox<String>();
+		player2_color_drop_down = new JComboBox<>();
 		player2_color_drop_down.addItem("Red");
 		player2_color_drop_down.addItem("Yellow");
 		player2_color_drop_down.addItem("Black");
