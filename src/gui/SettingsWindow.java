@@ -102,7 +102,7 @@ public class SettingsWindow extends JFrame {
 		else if (selectedMode == GameMode.MINIMAX_AI_VS_MINIMAX_AI)
 			game_mode_drop_down.setSelectedIndex(2);
 		
-		max_depth1_drop_down = new JComboBox<Integer>();
+		max_depth1_drop_down = new JComboBox<>();
 		max_depth1_drop_down.addItem(1);
 		max_depth1_drop_down.addItem(2);
 		max_depth1_drop_down.addItem(3);
@@ -111,7 +111,7 @@ public class SettingsWindow extends JFrame {
 		max_depth1_drop_down.addItem(6);
 		max_depth1_drop_down.addItem(7);
 		
-		max_depth2_drop_down = new JComboBox<Integer>();
+		max_depth2_drop_down = new JComboBox<>();
 		max_depth2_drop_down.addItem(1);
 		max_depth2_drop_down.addItem(2);
 		max_depth2_drop_down.addItem(3);
