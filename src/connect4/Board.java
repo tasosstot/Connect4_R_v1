@@ -1,4 +1,4 @@
-package connect4;
+package connectfour;
 
 
 import java.util.ArrayList;
