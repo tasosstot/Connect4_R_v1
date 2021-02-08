@@ -199,6 +199,7 @@ public class Connect4Gui {
 	public static KeyListener gameKeyListener = new KeyListener() {
 		@Override
 		public void keyTyped(KeyEvent e) {
+			// Key event
 			
 		}
 		
@@ -233,6 +234,7 @@ public class Connect4Gui {
 
 		@Override
 		public void keyReleased(KeyEvent e) {
+			// Key released
 
 		}
 	};
