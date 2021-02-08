@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import connect4.Board;
+import connectfour.Board;
 import utilities.Constants;
 
 

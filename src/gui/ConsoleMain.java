@@ -6,9 +6,9 @@ import java.util.InputMismatchException;
 // import java.util.Random;
 import java.util.Scanner;
 
-import connect4.Board;
-import connect4.MiniMaxAi;
-import connect4.Move;
+import connectfour.Board;
+import connectfour.MiniMaxAi;
+import connectfour.Move;
 import utilities.Constants;
 
 
@@ -37,20 +37,20 @@ public class ConsoleMain {
 		int XColumnPosition;
 		int maxDepth = 3;
 		MiniMaxAi OPlayer = new MiniMaxAi(maxDepth, Constants.P2);
-		Board connect4Board = new Board();
+		Board connectfourBoard = new Board();
 
         // Uncomment this, for "O" to play first
 		// board.setLastLetterPlayed(Board.X);
 
 		System.out.println("Minimax Connect-" + inARow + "!\n");
 		System.out.println("\n*****************************");
-		Board.printBoard(connect4Board.getGameBoard());
+		Board.printBoard(connectfourBoard.getGameBoard());
 		System.out.println();
 		
     	Scanner in = new Scanner(System.in);
         // While the game has not finished
-		while(!connect4Board.checkForGameOver()) {
-			switch (connect4Board.getLastPlayer()) {
+		while(!connectfourBoard.checkForGameOver()) {
+			switch (connectfourBoard.getLastPlayer()) {
 			
 					
                 // If "O" played last, then "X" plays now.
@@ -61,7 +61,7 @@ public class ConsoleMain {
         				do {
         					System.out.print("\nGive column (1-" + numOfColumns + "): ");
         					XColumnPosition = in.nextInt();
-        				} while (connect4Board.checkFullColumn(XColumnPosition-1));
+        				} while (connectfourBoard.checkFullColumn(XColumnPosition-1));
         			} catch (ArrayIndexOutOfBoundsException e){
         				System.err.println("\nValid numbers are: " + validNumbers + ".\n");
         				break;
@@ -70,7 +70,7 @@ public class ConsoleMain {
         				System.err.println("\nValid numbers are: " + validNumbers + ".\n");
         				break;
         			}
-					connect4Board.makeMove(XColumnPosition-1, Constants.P1);
+					connectfourBoard.makeMove(XColumnPosition-1, Constants.P1);
 					System.out.println();
 					break;
 					
@@ -80,30 +80,30 @@ public class ConsoleMain {
                     System.out.println("AI 'O' moves.");
                     
                     // Make MiniMax move.
-					Move OMove = OPlayer.miniMax(connect4Board);
+					Move OMove = OPlayer.miniMax(connectfourBoard);
 					
 					// Make a random move.
 					// Random r = new Random();
 					// int randomNum = r.nextInt(numOfColumns);
 					// connectNBoard.makeMove(randomNum, Constants.O);
 
-					connect4Board.makeMove(OMove.getColumn(), Constants.P2);
+					connectfourBoard.makeMove(OMove.getColumn(), Constants.P2);
 					System.out.println();
 					break;
 					
 				default:
 					break;
 			}
-			System.out.println("Turn: " + connect4Board.getTurn());
-			Board.printBoard(connect4Board.getGameBoard());
+			System.out.println("Turn: " + connectfourBoard.getTurn());
+			Board.printBoard(connectfourBoard.getGameBoard());
 		}
 		in.close();
 		
 		System.out.println();
 
-		if (connect4Board.getWinner() == Constants.P1) {
+		if (connectfourBoard.getWinner() == Constants.P1) {
 			System.out.println("Human player 'X' wins!");
-		} else if (connect4Board.getWinner() == Constants.P2) {
+		} else if (connectfourBoard.getWinner() == Constants.P2) {
 			System.out.println("AI computer 'O' wins!");
 		} else {
 			System.out.println("It's a draw!");
