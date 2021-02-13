@@ -30,6 +30,7 @@ public class ConsoleMain {
 			}
 		}
 		
+		Board connectfourBoard = connectfourBoard();
 		// We create the AI computer player "O" and the Connect-N board.
         // The "maxDepth" for the MiniMax algorithm is set to 3.
 		// Feel free to change the values.
@@ -37,7 +38,7 @@ public class ConsoleMain {
 		int XColumnPosition;
 		int maxDepth = 3;
 		MiniMaxAi OPlayer = new MiniMaxAi(maxDepth, Constants.P2);
-		Board connectfourBoard = new Board();
+		
 
         // Uncomment this, for "O" to play first
 		// board.setLastLetterPlayed(Board.X);
@@ -111,6 +112,30 @@ public class ConsoleMain {
 		
 		System.out.println("Game over.");
 				
+	}
+
+	private static Board connectfourBoard() {
+		int XColumnPosition;
+		int maxDepth = 3;
+		MiniMaxAi OPlayer = new MiniMaxAi(maxDepth, Constants.P2);
+		Board connectfourBoard = new Board();
+		Scanner in = new Scanner(System.in);
+		while (!connectfourBoard.checkForGameOver()) {
+			switch (connectfourBoard.getLastPlayer()) {
+			case Constants.P2:
+				do {
+					XColumnPosition = in.nextInt();
+				} while (connectfourBoard.checkFullColumn(XColumnPosition - 1));
+				connectfourBoard.makeMove(XColumnPosition - 1, Constants.P1);
+				break;
+			case Constants.P1:
+				Move OMove = OPlayer.miniMax(connectfourBoard);
+				connectfourBoard.makeMove(OMove.getColumn(), Constants.P2);
+				break;
+				
+			}
+		}
+		return connectfourBoard;
 	}
 	
 }
